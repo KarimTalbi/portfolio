@@ -20,6 +20,9 @@
 }
 
 .blob {
-  aspect-ratio: 1;
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1 !important;
+
   clip-path: shape(from 21.11% 13.34%,curve to 29.03% 7.99% with 25.01% 10.63%,smooth to 37.79% 4.56%,smooth to 47.30% 2.58%,smooth to 56.83% 2.54%,smooth to 66.15% 5.30%,smooth to 73.86% 10.71%,smooth to 80.42% 17.49%,smooth to 86.61% 24.10%,smooth to 93.29% 31.25%,smooth to 96.37% 39.88%,smooth to 96.36% 49.70%,smooth to 96.48% 59.19%,smooth to 93.43% 68.16%,smooth to 88.75% 76.57%,smooth to 81.85% 82.70%,smooth to 73.37% 86.77%,smooth to 65.84% 92.24%,smooth to 57.54% 97.44%,smooth to 48.22% 96.97%,smooth to 38.90% 94.08%,smooth to 30.39% 90.96%,smooth to 21.39% 87.21%,smooth to 14.90% 80.94%,smooth to 9.20% 72.81%,smooth to 5.42% 64.61%,smooth to 4.04% 54.90%,smooth to 1.73% 45.40%,smooth to 5.24% 36.63%,smooth to 10.00% 28.04%,smooth to 14.04% 19.65%,smooth to 21.11% 13.34%);
 }
