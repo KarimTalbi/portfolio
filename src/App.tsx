@@ -1,24 +1,26 @@
-import { useEffect, useRef } from "react";
+import {useEffect, useRef} from 'react';
 import Hero from "./components/Hero.tsx";
 import Navbar from "./components/Navbar.tsx";
 
 function App() {
   const containerRef = useRef<HTMLDivElement>(null);
   const isScrolling = useRef(false);
-  const touchStart = useRef(0); // Tracks initial touch Y position
 
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
 
-    const scrollToSection = (direction: "down" | "up") => {
+    const handleWheel = (e: WheelEvent) => {
+      e.preventDefault();
+
       if (isScrolling.current) return;
 
+      const delta = e.deltaY;
       const containerHeight = container.clientHeight;
       const currentScroll = container.scrollTop;
-      let targetScroll: number;
 
-      if (direction === "down") {
+      let targetScroll: number;
+      if (delta > 0) {
         targetScroll = Math.ceil((currentScroll + 1) / containerHeight) * containerHeight;
       } else {
         targetScroll = Math.floor((currentScroll - 1) / containerHeight) * containerHeight;
@@ -26,70 +28,43 @@ function App() {
 
       if (targetScroll >= 0 && targetScroll < container.scrollHeight) {
         isScrolling.current = true;
+
         container.scrollTo({
           top: targetScroll,
-          behavior: "smooth",
+          behavior: 'smooth'
         });
 
         setTimeout(() => {
           isScrolling.current = false;
-        }, 700); // Cooldown to prevent multi-triggering
+        }, 700);
       }
     };
 
-    const handleWheel = (e: WheelEvent) => {
-      e.preventDefault();
-      scrollToSection(e.deltaY > 0 ? "down" : "up");
-    };
-
-    const handleTouchStart = (e: TouchEvent) => {
-      touchStart.current = e.touches[0].clientY;
-    };
-
-    const handleTouchMove = (e: TouchEvent) => {
-      if (isScrolling.current) {
-        e.preventDefault();
-        return;
-      }
-
-      const touchEnd = e.touches[0].clientY;
-      const deltaY = touchStart.current - touchEnd;
-      const swipeThreshold = 30;
-
-      if (Math.abs(deltaY) > swipeThreshold) {
-        e.preventDefault();
-        scrollToSection(deltaY > 0 ? "down" : "up");
-      }
-    };
-
-    container.addEventListener("wheel", handleWheel, { passive: false });
-    container.addEventListener("touchstart", handleTouchStart, { passive: true });
-    container.addEventListener("touchmove", handleTouchMove, { passive: false });
+    container.addEventListener('wheel', handleWheel, {passive: false});
 
     return () => {
-      container.removeEventListener("wheel", handleWheel);
-      container.removeEventListener("touchstart", handleTouchStart);
-      container.removeEventListener("touchmove", handleTouchMove);
+      container.removeEventListener('wheel', handleWheel);
     };
   }, []);
 
   return (
     <div
       ref={containerRef}
-      className="h-screen overflow-y-auto scrollbar-thin scrollbar-thumb-page-accent"
+      className="h-screen overflow-y-scroll scrollbar-thumb-page-accent scrollbar-thin scroll-smooth"
     >
-      <Navbar />
+      <Navbar/>
+
 
       {/* Section 1: Hero */}
-      <div className="w-full h-screen shrink-0">
-        <Hero />
+      <div className="w-full h-screen">
+        <Hero/>
       </div>
 
       {/* Section 2: Projects */}
       <div className="w-full h-screen shrink-0 flex items-center justify-center">
-        <h2 className="text-3xl font-black uppercase tracking-tighter font-stretch-75% text-heading">
-          Projects Section
-        </h2>
+          <h2 className="text-3xl font-black uppercase tracking-tighter font-stretch-75% text-heading">
+            Projects Section
+          </h2>
       </div>
 
       {/* Section 3: Stack */}
@@ -98,8 +73,9 @@ function App() {
           Stack Section
         </h2>
       </div>
+
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
