@@ -2,7 +2,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import { cn } from "../lib/utils.ts";
 import { AccentBg } from "../lib/styles.ts";
-import subject from './src/assets/subject.png'
+import subject from './src/assets/Subject.png'
 
 export default function Hero() {
   return (
