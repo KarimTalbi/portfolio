@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from "react";
-import {cn} from "../lib/utils.ts";
+
 import {FaMoon, FaSun} from "react-icons/fa";
 
 export default function Navbar() {
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionIndex: number) => {
+  const handleNavClick = (e: React.MouseEvent<HTMLButtonElement>, sectionIndex: number) => {
     e.preventDefault();
 
     const container = document.querySelector('.h-screen.overflow-y-scroll');
@@ -30,37 +30,38 @@ export default function Navbar() {
   }, [isDark]);
 
   return (
-    <div className="w-full h-16 px-6 flex justify-center items-center shrink-0 absolute top-0 left-1/2 -translate-x-1/2 z-10">
+    <div className="w-full h-16 px-6 flex justify-center items-center shrink-0 absolute top-0 left-1/2 -translate-x-1/2 z-10 font-stretch-85%">
 
       <nav
-        className="flex justify-center items-center gap-4 md:gap-6 font-bold text-body tracking-tight text-page-accent-text "
+        className="flex justify-center items-center gap-4 md:gap-6 font-bold text-body tracking-tight text-page-accent-text"
         style={{ fontSize: "clamp(14px, 1.1vw, 18px)" }}
       >
-        <a
+        <button
           onClick={(e) => handleNavClick(e, 0)}
-          className={cn("rounded-sm py-1 px-2 bg-page-accent cursor-pointer")}
+          className="rounded-sm py-1 px-2 bg-page-accent cursor-pointer hover:text-accent"
         >
           [&nbsp;about&nbsp;]
-        </a>
+        </button>
 
-        <a
+        <button
           onClick={(e) => handleNavClick(e, 1)}
-          className={cn("rounded-sm py-1 px-2 bg-page-accent cursor-pointer")}
+          className="rounded-sm py-1 px-2 bg-page-accent cursor-pointer hover:text-accent"
         >
           [&nbsp;projects&nbsp;]
-        </a>
+        </button>
 
-        <a
+        <button
           onClick={(e) => handleNavClick(e, 2)}
-          className={cn("rounded-sm py-1 px-2 bg-page-accent cursor-pointer")}
+          className="rounded-sm py-1 px-2 bg-page-accent cursor-pointer hover:text-accent"
         >
           [&nbsp;stack&nbsp;]
-        </a>
+        </button>
 
-        <button className="bg-page-accent rounded-sm py-1 px-2 flex flex-row items-center cursor-pointer" onClick={() => setIsDark(!isDark)}>
-          [&nbsp;
-          {isDark ? <FaMoon className="size-3"/> : <FaSun className="size-3.5"/>}
-          &nbsp;]
+        <button
+          className="bg-page-accent rounded-sm py-1 px-2 flex flex-row items-center cursor-pointer hover:text-accent"
+          onClick={() => setIsDark(!isDark)}
+        >
+          [&nbsp;{isDark ? <FaMoon className="size-3"/> : <FaSun className="size-3.5"/>}&nbsp;]
         </button>
 
       </nav>

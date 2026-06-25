@@ -61,14 +61,14 @@ function App() {
       </div>
 
       {/* Section 2: Projects */}
-      <div id="projects" className="w-full h-screen shrink-0 flex items-center justify-center">
+      <div className="w-full h-screen shrink-0 flex items-center justify-center">
           <h2 className="text-3xl font-black uppercase tracking-tighter font-stretch-75% text-heading">
             Projects Section
           </h2>
       </div>
 
       {/* Section 3: Stack */}
-      <div id="stack" className="w-full h-screen shrink-0 flex items-center justify-center">
+      <div className="w-full h-screen shrink-0 flex items-center justify-center">
         <h2 className="text-3xl font-black uppercase tracking-tighter font-stretch-75% text-heading">
           Stack Section
         </h2>
