@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import Hero from "./components/Hero.tsx";
+import Navbar from "./components/Navbar.tsx";
 
 function App() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -57,8 +58,10 @@ function App() {
   return (
     <div
       ref={containerRef}
-      className="h-screen overflow-y-scroll scroll-smooth"
+      className="h-screen overflow-y-scroll scroll-smooth bg-bg"
     >
+      <Navbar />
+
 
       {/* Section 1: Hero */}
       <div className="w-full h-screen">

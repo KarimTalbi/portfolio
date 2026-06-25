@@ -8,4 +8,14 @@ export default defineConfig({
     react(),
     tailwindcss()
   ],
+  base: '/your-repository-name/',
+  server: {
+    allowedHosts: true,
+    hmr: {
+      clientPort: 443,
+    },
+  },
+  optimizeDeps: {
+    include: ['tailwind-merge'],
+  }
 })
