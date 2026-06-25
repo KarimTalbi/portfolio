@@ -33,6 +33,6 @@
 }
 
 @theme {
-  --color-acc: var(--accent-color, #3b82f6); /* Defaults to blue-500 */
+  --color-acc: var(--accent-color, #3b82f6);
   --color-bg: var(--bg-color, white)
 }

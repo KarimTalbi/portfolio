@@ -11,27 +11,21 @@ function App() {
     if (!container) return;
 
     const handleWheel = (e: WheelEvent) => {
-      // Prevent normal scrolling physics
       e.preventDefault();
 
-      // If an animation is already running, ignore incoming scroll ticks
       if (isScrolling.current) return;
 
       const delta = e.deltaY;
       const containerHeight = container.clientHeight;
       const currentScroll = container.scrollTop;
 
-      // Calculate target scroll destination based on direction
-      let targetScroll = currentScroll;
+      let targetScroll: number;
       if (delta > 0) {
-        // Scrolling down -> Go to next section
         targetScroll = Math.ceil((currentScroll + 1) / containerHeight) * containerHeight;
       } else {
-        // Scrolling up -> Go to previous section
         targetScroll = Math.floor((currentScroll - 1) / containerHeight) * containerHeight;
       }
 
-      // Check boundaries
       if (targetScroll >= 0 && targetScroll < container.scrollHeight) {
         isScrolling.current = true;
 
@@ -40,14 +34,12 @@ function App() {
           behavior: 'smooth'
         });
 
-        // Timeout coordinates with the duration of browser's 'smooth' scroll animation
         setTimeout(() => {
           isScrolling.current = false;
         }, 700);
       }
     };
 
-    // Add passive: false so we are allowed to intercept e.preventDefault()
     container.addEventListener('wheel', handleWheel, { passive: false });
 
     return () => {
