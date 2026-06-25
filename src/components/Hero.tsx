@@ -2,6 +2,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import { cn } from "../lib/utils.ts";
 import { AccentBg } from "../lib/styles.ts";
+import subject from './src/assets/subject.png'
 
 export default function Hero() {
   return (
@@ -20,7 +21,7 @@ export default function Hero() {
             }}
           >
             <img
-              src="/src/assets/subject.png"
+              src={subject}
               alt="Hamza Karim Talbi"
               className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90%] h-[90%] object-contain object-bottom"
             />
