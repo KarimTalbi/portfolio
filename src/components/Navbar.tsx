@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {cn} from "../lib/utils.ts";
-import {AccentBg} from "../lib/styles.ts";
-import {ThemeToggle} from "./ThemeToggle.tsx";
+import {FaMoon, FaSun} from "react-icons/fa";
 
 export default function Navbar() {
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionIndex: number) => {
@@ -31,39 +30,36 @@ export default function Navbar() {
   }, [isDark]);
 
   return (
-    <div className="w-full max-w-7xl h-16 flex justify-center items-center shrink-0 absolute top-0 left-1/2 -translate-x-1/2 z-10">
+    <div className="w-full h-16 px-6 flex justify-center items-center shrink-0 absolute top-0 left-1/2 -translate-x-1/2 z-10">
 
       <nav
-        className="flex gap-4 md:gap-6 font-bold text-body tracking-tight text-page-accent-text"
-        style={{ fontSize: "clamp(18px, 1.1vw, 18px)" }}
+        className="flex justify-center items-center gap-4 md:gap-6 font-bold text-body tracking-tight text-page-accent-text "
+        style={{ fontSize: "clamp(14px, 1.1vw, 18px)" }}
       >
         <a
-          href="#about"
           onClick={(e) => handleNavClick(e, 0)}
-          className={cn("rounded-sm px-1 bg-page-accent")}
+          className={cn("rounded-sm py-1 px-2 bg-page-accent cursor-pointer")}
         >
           [&nbsp;about&nbsp;]
         </a>
 
         <a
-          href="#projects"
           onClick={(e) => handleNavClick(e, 1)}
-          className={cn("rounded-sm px-1 bg-page-accent")}
+          className={cn("rounded-sm py-1 px-2 bg-page-accent cursor-pointer")}
         >
           [&nbsp;projects&nbsp;]
         </a>
 
         <a
-          href="#stack"
           onClick={(e) => handleNavClick(e, 2)}
-          className={cn("rounded-sm px-1 bg-page-accent")}
+          className={cn("rounded-sm py-1 px-2 bg-page-accent cursor-pointer")}
         >
           [&nbsp;stack&nbsp;]
         </a>
 
-        <button className="bg-page-accent rounded-sm px-1" onClick={() => setIsDark(!isDark)}>
+        <button className="bg-page-accent rounded-sm py-1 px-2 flex flex-row items-center cursor-pointer" onClick={() => setIsDark(!isDark)}>
           [&nbsp;
-          {isDark ? "dark mode" : "light mode"}
+          {isDark ? <FaMoon className="size-3"/> : <FaSun className="size-3.5"/>}
           &nbsp;]
         </button>
 

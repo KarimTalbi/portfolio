@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import {useEffect, useRef} from 'react';
 import Hero from "./components/Hero.tsx";
 import Navbar from "./components/Navbar.tsx";
 
@@ -40,7 +40,7 @@ function App() {
       }
     };
 
-    container.addEventListener('wheel', handleWheel, { passive: false });
+    container.addEventListener('wheel', handleWheel, {passive: false});
 
     return () => {
       container.removeEventListener('wheel', handleWheel);
@@ -50,25 +50,25 @@ function App() {
   return (
     <div
       ref={containerRef}
-      className="h-screen overflow-y-scroll scroll-smooth bg-page-bg text-page-text"
+      className="h-screen overflow-y-scroll scrollbar-thumb-page-accent scrollbar-thin scroll-smooth"
     >
-      <Navbar />
+      <Navbar/>
 
 
       {/* Section 1: Hero */}
       <div className="w-full h-screen">
-        <Hero />
+        <Hero/>
       </div>
 
       {/* Section 2: Projects */}
-      <div id="projects" className="w-full h-screen shrink-0 bg-slate-50 flex items-center justify-center">
-        <h2 className="text-3xl font-black uppercase tracking-tighter font-stretch-75% text-heading">
-          Projects Section
-        </h2>
+      <div id="projects" className="w-full h-screen shrink-0 flex items-center justify-center">
+          <h2 className="text-3xl font-black uppercase tracking-tighter font-stretch-75% text-heading">
+            Projects Section
+          </h2>
       </div>
 
       {/* Section 3: Stack */}
-      <div id="stack" className="w-full h-screen shrink-0 bg-white flex items-center justify-center">
+      <div id="stack" className="w-full h-screen shrink-0 flex items-center justify-center">
         <h2 className="text-3xl font-black uppercase tracking-tighter font-stretch-75% text-heading">
           Stack Section
         </h2>

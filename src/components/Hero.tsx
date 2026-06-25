@@ -9,12 +9,12 @@ export default function Hero() {
 
     <div className="w-full pt-16 max-w-7xl mx-auto px-6 md:px-16 flex flex-col min-h-screen md:h-full md:overflow-hidden">
 
-      <div className="md:flex-1 grid grid-cols-1 landscape:grid-cols-12 gap-6 landscape:gap-12 items-center py-4 landscape:py-8 min-h-0">
+      <div className="md:flex-1 grid grid-cols-1 landscape:grid-cols-12 gap-6 landscape:gap-12 items-center py-20 landscape:py-8 min-h-0">
 
-        <div className="landscape:col-span-5 flex justify-center w-full order-first landscape:order-last mb-6 landscape:mb-0">
+        <div className="landscape:col-span-5 flex justify-center items-center w-full order-first landscape:order-last mb-8 landscape:mb-0">
 
           <div
-            className={cn("blob shrink-0 relative overflow-hidden", AccentBg)}
+            className={cn("blob shrink-0 relative overflow-hidden bg-page-accent")}
             style={{
               width: "clamp(180px, 30vw, 400px)",
               height: "clamp(180px, 30vw, 400px)"
@@ -32,20 +32,20 @@ export default function Hero() {
         <div className="landscape:col-span-7 flex flex-col items-start text-left h-auto landscape:h-full justify-center pb-8 landscape:pb-0">
 
           <span
-            className="font-bold tracking-wide text-neutral-600 mb-2"
+            className="font-bold tracking-wide mb-2"
             style={{ fontSize: "clamp(16px, 1.5vw, 30px)" }}
           >
             [&nbsp;JUNIOR AI ENGINEER&nbsp;]
           </span>
 
           <h1
-            className="font-bold leading-[0.9] mb-4 font-stretch-75% text-neutral-700 w-full text-nowrap"
-            style={{ fontSize: "clamp(26px, 4vw, 65px)" }}
+            className="font-bold leading-[0.9] mb-4 font-stretch-75% w-full text-nowrap"
+            style={{ fontSize: "clamp(24px, 4vw, 65px)" }}
           >
             Hello, my name is
             <span
               className={cn(
-                "leading-[0.9] rounded-sm tracking-normal inline-block ml-2 py-2 px-3 whitespace-nowrap text-acc",
+                "leading-[0.9] rounded-sm tracking-normal inline-block ml-2 py-2 px-3 whitespace-nowrap text-page-accent-text",
                 AccentBg
               )}>
               Karim Talbi
@@ -60,13 +60,13 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-wrap items-center gap-3">
-            <button className={cn("btn btn-square btn-ghost border-none rounded-sm text-acc", AccentBg)}>
+            <button className={cn("btn btn-square btn-ghost border-none rounded-sm bg-page-accent text-page-accent-text")}>
               <FaGithub className="text-3xl"/>
             </button>
-            <button className={cn("btn btn-square btn-ghost border-none rounded-sm text-acc", AccentBg)}>
+            <button className={cn("btn btn-square btn-ghost border-none rounded-sm bg-page-accent text-page-accent-text")}>
               <FaLinkedin className="text-3xl"/>
             </button>
-            <button className={cn("btn btn-square btn-ghost border-none rounded-sm text-acc", AccentBg)}>
+            <button className={cn("btn btn-square btn-ghost border-none rounded-sm bg-page-accent text-page-accent-text")}>
               <AiFillInstagram className="text-4xl"/>
             </button>
           </div>
