@@ -8,7 +8,7 @@ export default defineConfig({
     react(),
     tailwindcss()
   ],
-  base: '/your-repository-name/',
+  base: '/portfolio/',
   server: {
     allowedHosts: true,
     hmr: {
