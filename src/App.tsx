@@ -50,7 +50,7 @@ function App() {
   return (
     <div
       ref={containerRef}
-      className="h-screen overflow-y-scroll scroll-smooth bg-bg"
+      className="h-screen overflow-y-scroll scroll-smooth bg-page-bg text-page-text"
     >
       <Navbar />
 

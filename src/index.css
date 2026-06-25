@@ -1,16 +1,20 @@
 @import "tailwindcss";
-@plugin "daisyui";
+
+@plugin "daisyui" {
+  themes: light --default, dark;
+}
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
 :root {
-  --accent-color: oklch(89% 30% 89deg);
-  --bg-color: white;
+  --custom-accent: oklch(97% 8% 97deg);
+  --custom-accent-text: oklch(44% 0% 90deg);
+  --custom-bg: white;
+  --custom-text: oklch(44% 0% 90deg);
 
-
-  /* Typography Layout Engine */
   --sans: 'Archivo', system-ui, -apple-system, sans-serif;
   --heading: 'Archivo', system-ui, -apple-system, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
-
 
   font: 18px/145% var(--sans);
   letter-spacing: 0.18px;
@@ -24,6 +28,13 @@
   }
 }
 
+[data-theme="dark"] {
+  --custom-accent: oklch(97% 8% 97deg);
+  --custom-bg: oklch(27% 0% 17deg);
+  --custom-text: oklch(97% 8% 97deg);
+
+}
+
 .blob {
   display: block;
   width: 100%;
@@ -33,6 +44,8 @@
 }
 
 @theme {
-  --color-acc: var(--accent-color, #3b82f6);
-  --color-bg: var(--bg-color, white)
+  --color-page-accent: var(--custom-accent);
+  --color-page-accent-text: var(--custom-accent-text);
+  --color-page-bg: var(--custom-bg);
+  --color-page-text: var(--custom-text)
 }
