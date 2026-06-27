@@ -5,7 +5,7 @@ export default function ProfilePicture() {
   return (
     <div className="flex flex-row items-center gap-10">
       <div
-        className={cn("size-50 blob shrink-0 relative overflow-hidden bg-page-accent")}
+        className={cn("size-50 blob shrink-0 relative overflow-hidden bg-page-accent portrait:size-40")}
       >
         <img
           src={subject}

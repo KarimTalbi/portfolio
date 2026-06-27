@@ -1,6 +1,7 @@
 import {useEffect, useRef} from 'react';
 import Hero from "./components/hero/Hero.tsx";
 import Navbar from "./components/Navbar.tsx";
+import Stack from "./components/stack/stack.tsx";
 
 function App() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -68,10 +69,8 @@ function App() {
       </div>
 
       {/* Section 3: Stack */}
-      <div className="w-full h-screen shrink-0 flex items-center justify-center">
-        <h2 className="text-3xl font-black uppercase tracking-tighter font-stretch-75% text-heading">
-          Stack Section
-        </h2>
+      <div className="w-full h-screen">
+        <Stack/>
       </div>
 
     </div>
