@@ -1,5 +1,5 @@
 import {useEffect, useRef} from 'react';
-import Hero from "./components/Hero.tsx";
+import Hero from "./components/hero/Hero.tsx";
 import Navbar from "./components/Navbar.tsx";
 
 function App() {

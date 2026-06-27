@@ -37,8 +37,9 @@
   --custom-accent-text: oklch(.371 0 0);
   --custom-bg: oklch(.371 0 0);
   --custom-text: oklch(97% 8% 97deg);
-
 }
+
+
 
 .blob {
   display: block;
@@ -52,5 +53,5 @@
   --color-page-accent: var(--custom-accent);
   --color-page-accent-text: var(--custom-accent-text);
   --color-page-bg: var(--custom-bg);
-  --color-page-text: var(--custom-text)
+  --color-page-text: var(--custom-text);
 }
