@@ -1,76 +1,21 @@
-import {useEffect, useRef} from 'react';
 import Hero from "./components/hero/Hero.tsx";
 import Navbar from "./components/Navbar.tsx";
 import Stack from "./components/stack/stack.tsx";
+import Projects from "./components/Projects/Projects.tsx";
 
 function App() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const isScrolling = useRef(false);
-
-  useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-
-    const handleWheel = (e: WheelEvent) => {
-      e.preventDefault();
-
-      if (isScrolling.current) return;
-
-      const delta = e.deltaY;
-      const containerHeight = container.clientHeight;
-      const currentScroll = container.scrollTop;
-
-      let targetScroll: number;
-      if (delta > 0) {
-        targetScroll = Math.ceil((currentScroll + 1) / containerHeight) * containerHeight;
-      } else {
-        targetScroll = Math.floor((currentScroll - 1) / containerHeight) * containerHeight;
-      }
-
-      if (targetScroll >= 0 && targetScroll < container.scrollHeight) {
-        isScrolling.current = true;
-
-        container.scrollTo({
-          top: targetScroll,
-          behavior: 'smooth'
-        });
-
-        setTimeout(() => {
-          isScrolling.current = false;
-        }, 700);
-      }
-    };
-
-    container.addEventListener('wheel', handleWheel, {passive: false});
-
-    return () => {
-      container.removeEventListener('wheel', handleWheel);
-    };
-  }, []);
 
   return (
-    <div
-      ref={containerRef}
-      className="h-screen overflow-y-scroll scrollbar-thumb-page-accent scrollbar-thin scroll-smooth"
-    >
+    <div className="w-full mb-10">
       <Navbar/>
+      <Hero/>
+      <Stack/>
+      <Projects/>
 
-
-      {/* Section 1: Hero */}
-      <div className="w-full h-screen">
-        <Hero/>
-      </div>
-
-      {/* Section 2: Projects */}
-      <div className="w-full h-screen shrink-0 flex items-center justify-center">
-          <h2 className="text-3xl font-black uppercase tracking-tighter font-stretch-75% text-heading">
-            Projects Section
-          </h2>
-      </div>
-
-      {/* Section 3: Stack */}
-      <div className="w-full h-screen">
-        <Stack/>
+      <div className="w-full max-w-3xl mx-auto h-16 px-16 portrait:px-6 flex justify-center items-center shrink-0 font-stretch-85%">
+        <span className="text-neutral-500 text-[12px] tracking-widest">
+          Designed & built by Karim Talbi · 2026
+        </span>
       </div>
 
     </div>

@@ -7,12 +7,12 @@
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
 :root {
-  background:oklch(97% 8% 97deg);
-  color: oklch(.371 0 0);
-  --custom-accent: oklch(.371 0 0);
-  --custom-accent-text: oklch(97% 8% 97deg);
-  --custom-bg: oklch(97% 8% 97deg);
-  --custom-text: oklch(.371 0 0);
+  background: white;
+  color: oklch(22% 0% 17deg);
+  --custom-accent: oklch(78% 35% 181deg);
+  --custom-accent-text: white;
+  --custom-bg: white;
+  --custom-text: oklch(22% 0% 17deg);
 
   --sans: 'Archivo', system-ui, -apple-system, sans-serif;
   --heading: 'Archivo', system-ui, -apple-system, sans-serif;
@@ -31,11 +31,11 @@
 }
 
 [data-theme="dark"] {
-  background: oklch(.371 0 0);
-  color: oklch(97% 8% 97deg);
-  --custom-accent: oklch(97% 8% 97deg);
-  --custom-accent-text: oklch(.371 0 0);
-  --custom-bg: oklch(.371 0 0);
+  background: oklch(22% 0% 17deg);
+  color: white;
+  --custom-accent: oklch(78% 35% 181deg);
+  --custom-accent-text: oklch(22% 0% 17deg);
+  --custom-bg: oklch(22% 0% 17deg);
   --custom-text: oklch(97% 8% 97deg);
 }
 

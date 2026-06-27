@@ -16,33 +16,47 @@ export default function Stack() {
   return (
     <div
       className={cn(
-        "w-full max-w-6xl pt-16 mx-auto px-16",
+        "w-full max-w-3xl mt-10 mx-auto px-16",
         "flex flex-col gap-2 items-start justify-center",
-        "min-h-screen overflow-hidden",
         "portrait:justify-center portrait:mx-0 portrait:px-6 portrait:pt-0"
       )}>
+
+      <div>
+        <span className="font-bold tracking-wide font-stretch-75% flex flex-row my-5"
+              style={{fontSize: "clamp(20px, 3vw, 25px)"}}>
+                <span className="text-accent">[</span>
+          &nbsp;STACK&nbsp;
+          <span className="text-accent">]</span>
+              </span>
+      </div>
 
       {categories.map((category, i) => (
         <div
           key={i}
-          className="flex flex-col items-start text-left h-full justify-center w-full gap-1 font-bold tracking-wide font-stretch-75% border-l-2 border-page-accent px-3 my-1"
-          style={{fontSize: "clamp(12px, 2.5vw, 16px)"}}
+          className="flex flex-col items-start justify-center gap-0.5 border-l-2 border-page-accent px-3"
         >
-          <div className="flex flex-row items-center">
-            <p className="uppercase">{category}</p>
-            <p className="mx-1">=</p>
-            <p>{"{"}</p>
+
+          <div className="items-center font-bold tracking-wide font-stretch-90%">
+            <p className="uppercase" style={{fontSize: "clamp(12px, 2.5vw, 14px)"}}>{category}</p>
+
           </div>
 
-          <div className="flex flex-row flex-wrap items-center font-bold tracking-normal gap-2">
+          <div className="flex flex-row flex-wrap items-center gap-1">
             {items[i].map((item, idx) => (
-              <div key={idx} className="flex flex-row items-center gap-1">
-                <p className="px-0.5 bg-page-accent text-page-accent-text rounded-sm text-nowrap">{item}</p>
-              </div>
+
+                <span
+                  key={idx}
+                  className="p-1 bg-page-accent font-bold text-page-accent-text rounded-sm text-nowrap m-0 leading-none"
+                  style={{fontSize: "clamp(10px, 2.5vw, 12px)"}}
+                >
+                  {item}
+                </span>
+
             ))}
+
           </div>
-          <p>{"}"}</p>
         </div>
+
       ))}
 
 
