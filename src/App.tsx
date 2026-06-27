@@ -6,7 +6,7 @@ import Projects from "./components/Projects/Projects.tsx";
 function App() {
 
   return (
-    <div className="w-full mb-10">
+    <div className="w-full mb-10 flex flex-col items-center justify-center">
       <Navbar/>
       <Hero/>
       <Stack/>
