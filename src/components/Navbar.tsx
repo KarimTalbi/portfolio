@@ -1,27 +1,56 @@
-import {FaMoon, FaSun} from "react-icons/fa";
 import {useSettings} from "../hooks/useSettings.tsx";
+import {AccentBrackets} from "./ui/UiElements.tsx";
 
 export default function Navbar() {
-  const {isDark, setIsDark} = useSettings();
+  const {isDark, setIsDark, lang, setLang} = useSettings();
 
   return (
-    <div className="w-full max-w-3xl mx-auto h-16 px-16 portrait:px-6 flex justify-end items-center shrink-0 absolute top-0 left-1/2 -translate-x-1/2 z-10 font-stretch-85%">
+    <>
+      <nav className="flex w-full justify-between items-center">
+        <div className="flex flex-row gap-2">
 
-      <nav
-        className="flex justify-center items-center gap-4 md:gap-6 font-bold text-body tracking-tight"
-        style={{ fontSize: "clamp(14px, 1.1vw, 18px)" }}
-      >
+          <a href="#aboutme">
+            <AccentBrackets className="text-[0.9rem]">
+              about me
+            </AccentBrackets>
+          </a>
 
-        <button className="cursor-pointer hover:text-accent flex flex-row items-center text-bold px-1 rounded-sm"
-          onClick={() => setIsDark(!isDark)}
-        >
-          <p className="text-accent">[</p>
-          &nbsp;{isDark ? <FaMoon className="size-3"/> : <FaSun className="size-3.5"/>}&nbsp;
-          <p className="text-accent">]</p>
-        </button>
+          <a href="#stack">
+            <AccentBrackets className="text-[0.9rem]">
+              stack
+            </AccentBrackets>
+          </a>
+
+          <a href="#projects">
+            <AccentBrackets className="text-[0.9rem]">
+              projects
+            </AccentBrackets>
+          </a>
+
+          <a href="#contact">
+            <AccentBrackets className="text-[0.9rem]">
+              contact
+            </AccentBrackets>
+          </a>
+
+        </div>
+
+        <div className="flex flex-row gap-2">
+          <button onClick={() => setLang(lang === "en" ? "de" : "en")}>
+            <AccentBrackets className="text-[0.9rem]">
+              {lang}
+            </AccentBrackets>
+          </button>
+
+          <button onClick={() => setIsDark(!isDark)}>
+            <AccentBrackets className="text-[0.9rem]">
+              {isDark ? "DARK" : "LIGHT"}
+            </AccentBrackets>
+          </button>
+        </div>
 
       </nav>
-    </div>
+    </>
 
   )
 }

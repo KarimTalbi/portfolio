@@ -36,7 +36,7 @@
   --custom-accent: oklch(78% 35% 181deg);
   --custom-accent-text: oklch(22% 0% 17deg);
   --custom-bg: oklch(22% 0% 17deg);
-  --custom-text: oklch(97% 8% 97deg);
+  --custom-text: white;
 }
 
 

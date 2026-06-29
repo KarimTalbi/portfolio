@@ -5,3 +5,5 @@ export const SectionContainer = cn(
   "flex flex-col gap-3 items-start justify-center",
   "portrait:mx-0 portrait:px-6"
 )
+
+export const HeaderStyle = "text-[2rem] font-stretch-75%"
