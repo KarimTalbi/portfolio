@@ -1,16 +1,10 @@
-import {cn} from "../../lib/utils.ts";
 import {FaGithub, FaLinkedin} from "react-icons/fa";
 import {AiFillInstagram} from "react-icons/ai";
 import {IoMail} from "react-icons/io5";
 
 export default function Projects() {
   return (
-    <div
-      className={cn(
-        "w-full max-w-3xl mt-10 mx-auto px-16",
-        "flex flex-col gap-2 items-start justify-center mb-10",
-        "portrait:justify-center portrait:mx-0 portrait:px-6 portrait:pt-0"
-      )}>
+    <>
 
       <div>
         <span className="font-bold tracking-wide font-stretch-75% flex flex-row my-5"
@@ -51,6 +45,6 @@ export default function Projects() {
 
       </div>
 
-    </div>
+    </>
   )
 }

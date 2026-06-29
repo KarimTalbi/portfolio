@@ -1,0 +1,41 @@
+{
+  "Artificial Intelligence": [
+    "LLMs",
+    "Generative Ai",
+    "RAG",
+    "Prompt Engineering",
+    "NLP",
+    "LangChain",
+    "Vector Databases"
+  ],
+  "Frontend Development": [
+    "React",
+    "TypeScript",
+    "ReactFlow",
+    "Tailwind",
+    "Vite"
+  ],
+  "Backend Development": [
+    "Python",
+    "FastAPI",
+    "SQL",
+    "PostgreSQL",
+    "Pydantic",
+    "RESTful APIs",
+    "OOP"
+  ],
+  "Tools & DevOps": [
+    "Git / Version Control",
+    "GitHub",
+    "Docker",
+    "CI/CD",
+    "PyCharm",
+    "VS Code"
+  ],
+  "Methodologies": [
+    "Data Modeling",
+    "TDD",
+    "Project Management",
+    "Requirement Engineering"
+  ]
+}

@@ -18,7 +18,7 @@
   --heading: 'Archivo', system-ui, -apple-system, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
 
-  font: 18px/145% var(--sans);
+  font: 18px/140% var(--sans);
   letter-spacing: 0.18px;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -54,4 +54,9 @@
   --color-page-accent-text: var(--custom-accent-text);
   --color-page-bg: var(--custom-bg);
   --color-page-text: var(--custom-text);
+}
+
+.theme-accent-block {
+  background-color: var(--color-page-accent);
+  color: var(--color-page-accent-text);
 }

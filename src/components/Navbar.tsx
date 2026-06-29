@@ -1,21 +1,8 @@
-import {useEffect, useState} from "react";
-
 import {FaMoon, FaSun} from "react-icons/fa";
+import {useSettings} from "../hooks/useSettings.tsx";
 
 export default function Navbar() {
-
-
-  const [isDark, setIsDark] = useState(() => {
-    if (typeof window !== "undefined") {
-      return document.documentElement.getAttribute("data-theme") === "dark";
-    }
-    return false;
-  });
-
-  useEffect(() => {
-    const theme = isDark ? "dark" : "light";
-    document.documentElement.setAttribute("data-theme", theme);
-  }, [isDark]);
+  const {isDark, setIsDark} = useSettings();
 
   return (
     <div className="w-full max-w-3xl mx-auto h-16 px-16 portrait:px-6 flex justify-end items-center shrink-0 absolute top-0 left-1/2 -translate-x-1/2 z-10 font-stretch-85%">

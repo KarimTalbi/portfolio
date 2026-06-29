@@ -1,2 +1,7 @@
-export const AccentText = "text-[#f9d679] hover:text-neutral-600 transition-colors"
-export const AccentBg = "bg-page-accent"
+import {cn} from "./utils.ts";
+
+export const SectionContainer = cn(
+  "w-full max-w-3xl mx-auto px-16",
+  "flex flex-col gap-3 items-start justify-center",
+  "portrait:mx-0 portrait:px-6"
+)

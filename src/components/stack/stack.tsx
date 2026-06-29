@@ -1,5 +1,3 @@
-import {cn} from "../../lib/utils.ts";
-
 const categories = [
   "Artificial Intelligence", "Frontend Development", "Backend Development", "Tools & DevOps", "Methodologies"
 ]
@@ -14,21 +12,7 @@ const items = [
 
 export default function Stack() {
   return (
-    <div
-      className={cn(
-        "w-full max-w-3xl mt-10 mx-auto px-16",
-        "flex flex-col gap-2 items-start justify-center",
-        "portrait:justify-center portrait:mx-0 portrait:px-6 portrait:pt-0"
-      )}>
-
-      <div>
-        <span className="font-bold tracking-wide font-stretch-75% flex flex-row my-5"
-              style={{fontSize: "clamp(20px, 3vw, 25px)"}}>
-                <span className="text-accent">[</span>
-          &nbsp;STACK&nbsp;
-          <span className="text-accent">]</span>
-              </span>
-      </div>
+    <>
 
       {categories.map((category, i) => (
         <div
@@ -46,7 +30,7 @@ export default function Stack() {
 
                 <span
                   key={idx}
-                  className="p-1 bg-page-accent font-bold text-page-accent-text rounded-sm text-nowrap m-0 leading-none"
+                  className="p-1 bg-page-accent font-bold text-page-accent-text text-nowrap m-0 leading-none"
                   style={{fontSize: "clamp(10px, 2.5vw, 12px)"}}
                 >
                   {item}
@@ -60,6 +44,6 @@ export default function Stack() {
       ))}
 
 
-    </div>
+    </>
   )
 }
